@@ -17,8 +17,8 @@ class ChatAPI:
         
     class _Create(Resource):
         def get(self):
-            return jsonify({"message": "This is the GET request for _Create"})
-
+            var = jsonify({"message": "This is the GET request for _Create"})
+            return var
         def post(self):
             data = request.json
             message = data.get('message')
@@ -34,7 +34,8 @@ class ChatAPI:
         def get(self):
             chat_messages = ChatMessage.query.all()
             messages_json = [msg.serialize() for msg in chat_messages]
-            return jsonify(messages_json)
+            var = jsonify(messages_json)
+            return var
 
     class _Edit(Resource):
         def put(self):

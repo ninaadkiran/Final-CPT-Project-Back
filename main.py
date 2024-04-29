@@ -45,7 +45,6 @@ custom_cli = AppGroup('custom', help='Custom commands')
 @custom_cli.command('generate_data')
 def generate_data():
     initUsers()
-    initPlayers()
 # Register the custom command group with the Flask application
 app.cli.add_command(custom_cli)
 # this runs the application on the development server
